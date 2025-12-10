@@ -1,7 +1,7 @@
 public enum ItemType
 {
     Coins,
-    Gem,
+    Gems,
     Chest,
     Crystals,
     Potion,
