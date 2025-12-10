@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 [Serializable]
-public class RewardData
+public class DailyRewardData
 {
     public int day;
     public List<ItemAmount> items;

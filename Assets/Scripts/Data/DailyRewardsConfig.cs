@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 
 [Serializable]
-public class RewardsConfig
+public class DailyRewardsConfig
 {
-    public List<RewardData> rewards;
+    public List<DailyRewardData> rewards;
 
-    public RewardData GetRewardData(int day)
+    public DailyRewardData GetRewardData(int day)
     {
         return rewards.Find(r => r.day == day);
     }
