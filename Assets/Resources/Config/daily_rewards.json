@@ -1,11 +1,11 @@
 {
   "rewards": [
-    { "day": 1, "items": [ { "type": "Coins", "amount": 100 }, { "type": "Gems", "amount": 1 } ] },
+    { "day": 1, "items": [ { "type": "Coins", "amount": 50 }, { "type": "Gems", "amount": 1 } ] },
     { "day": 2, "items": [ { "type": "Coins", "amount": 150 } ] },
-    { "day": 3, "items": [ { "type": "Energy", "amount": 2 }, { "type": "ChestSmall", "amount": 1 } ] },
-    { "day": 4, "items": [ { "type": "Coins", "amount": 250 }, { "type": "Key", "amount": 1 } ] },
-    { "day": 5, "items": [ { "type": "Gems", "amount": 2 }, { "type": "Booster", "amount": 1 } ] },
-    { "day": 6, "items": [ { "type": "Coins", "amount": 500 } ] },
-    { "day": 7, "items": [ { "type": "ChestBig", "amount": 1 }, { "type": "Gems", "amount": 5 } ] }
+    { "day": 3, "items": [ { "type": "Crystals", "amount": 2 }, { "type": "Chest", "amount": 1 } ] },
+    { "day": 4, "items": [ { "type": "Coins", "amount": 250 }, { "type": "Keys", "amount": 1 } ] },
+    { "day": 5, "items": [ { "type": "Defence", "amount": 2 }, { "type": "Potion", "amount": 1 } ] },
+    { "day": 6, "items": [ { "type": "Scroll", "amount": 1 } ] },
+    { "day": 7, "items": [ { "type": "Gems", "amount": 10 }, { "type": "Cash", "amount": 5 } ] }
   ]
 }
