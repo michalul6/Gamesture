@@ -150,7 +150,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: coins
+      name: Coins
       rect:
         serializedVersion: 2
         x: 54
@@ -172,7 +172,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: red_gem
+      name: Gem
       rect:
         serializedVersion: 2
         x: 360
@@ -194,7 +194,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chest
+      name: Chest
       rect:
         serializedVersion: 2
         x: 680
@@ -216,7 +216,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crystal
+      name: Crystals
       rect:
         serializedVersion: 2
         x: 52
@@ -238,7 +238,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: potion
+      name: Potion
       rect:
         serializedVersion: 2
         x: 356
@@ -260,7 +260,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cash
+      name: Cash
       rect:
         serializedVersion: 2
         x: 679
@@ -282,7 +282,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: defence
+      name: Defence
       rect:
         serializedVersion: 2
         x: 52
@@ -304,7 +304,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: keys
+      name: Keys
       rect:
         serializedVersion: 2
         x: 376
@@ -326,7 +326,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: scroll
+      name: Scroll
       rect:
         serializedVersion: 2
         x: 686
@@ -361,15 +361,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cash: 1029794525280832843
-      chest: 4860828645979972454
-      coins: 4389010474860182621
-      crystal: -1095815218240451732
-      defence: 7442144728074133019
-      keys: -5379082990108949984
-      potion: -4051559540610116642
-      red_gem: 2578891057620692209
-      scroll: 360366832098327660
+      Cash: 1029794525280832843
+      Chest: 4860828645979972454
+      Coins: 4389010474860182621
+      Crystals: -1095815218240451732
+      Defence: 7442144728074133019
+      Gem: 2578891057620692209
+      Keys: -5379082990108949984
+      Potion: -4051559540610116642
+      Scroll: 360366832098327660
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
