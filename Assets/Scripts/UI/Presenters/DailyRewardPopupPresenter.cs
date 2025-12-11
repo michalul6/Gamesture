@@ -3,6 +3,7 @@ public class DailyRewardPopupPresenter : IPresenter
     private readonly DailyRewardPopupView _view;
     private readonly DailyRewardService _service;
     private readonly Player _player;
+    private readonly ItemIconProvider _itemIcons;
 
     private int _currentDayToShow;
 
@@ -11,6 +12,7 @@ public class DailyRewardPopupPresenter : IPresenter
         _view = view;
         _service = context.Resolve<DailyRewardService>();
         _player  = context.Resolve<Player>();
+        _itemIcons = context.Resolve<ItemIconProvider>();
 
         _view.ClaimClicked += OnClaim;
         _view.CloseClicked += OnClose;
@@ -32,6 +34,7 @@ public class DailyRewardPopupPresenter : IPresenter
     {
         _view.RefreshSlots(
             day => _service.GetReward(day),
+            type => _itemIcons.Get(type),
             _player.lastClaimedDay,
             _currentDayToShow);
     }

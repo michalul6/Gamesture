@@ -150,8 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameRoot
   screenFactory: {fileID: 11400000, guid: d625ac67e0e0e4352a774dbd84f1927d, type: 2}
   popupFactory: {fileID: 11400000, guid: 908ce78ee92234e1a800fe5b729fb825, type: 2}
-  screenPresenterFactory: {fileID: 11400000, guid: c2785d880cd4747b8986e6fefbdb8bb3, type: 2}
-  popupPresenterFactory: {fileID: 11400000, guid: 95e389b7bf5dc402d9d0d597ead812c9, type: 2}
+  itemIconDatabase: {fileID: 11400000, guid: 3c2e5b31ecc1047f5b36915643252e94, type: 2}
   screenRoot: {fileID: 566288991}
   popupRoot: {fileID: 1716602480}
 --- !u!4 &482909079

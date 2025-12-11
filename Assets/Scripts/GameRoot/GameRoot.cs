@@ -6,6 +6,9 @@ public class GameRoot : MonoBehaviour
     public ScreenFactorySO screenFactory;
     public PopupFactorySO popupFactory;
 
+    [Header("Databases")]
+    public ItemIconDatabaseSO itemIconDatabase;
+
     [Header("UI Roots")]
     public Transform screenRoot;
     public Transform popupRoot;
@@ -19,12 +22,14 @@ public class GameRoot : MonoBehaviour
         var player = storage.Load();
         var config = RewardsJsonLoader.LoadConfig("Config/daily_rewards");
         var dailyRewardService = new DailyRewardService(player, config, storage);
+        var itemIconProvider = new ItemIconProvider(itemIconDatabase);
 
         // DI
         _context = new GameContext();
         _context.Register(storage);
         _context.Register(player);
         _context.Register(dailyRewardService);
+        _context.Register(itemIconProvider);
 
         var screenPresenterFactory = new ScreenPresenterFactory();
         var popupPresenterFactory = new PopupPresenterFactory();

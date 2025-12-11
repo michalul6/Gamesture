@@ -28,7 +28,11 @@ public class DailyRewardPopupView : BasePopupView
             simulateNextDayButton.onClick.AddListener(() => SimulateNextDayClicked?.Invoke());
     }
 
-    public void RefreshSlots(Func<int, DailyReward> getRewardForDay, int lastClaimedDay, int currentDayToShow)
+    public void RefreshSlots(
+        Func<int, DailyReward> getRewardForDay,
+        Func<ItemType, Sprite> getIcon,
+        int lastClaimedDay,
+        int currentDayToShow)
     {
         if (daySlots == null) return;
 
@@ -42,23 +46,20 @@ public class DailyRewardPopupView : BasePopupView
 
             var reward = getRewardForDay(day);
 
+            var itemIndex = 0;//for simplicity lets assume we always show first item if multiple
+
             if (reward != null)
             {
-                string itemsText = "";
-                for (int j = 0; j < reward.Items.Count; j++)
+                if (getIcon != null && reward.Items.Count > 0)
                 {
-                    var it = reward.Items[j];
-                    itemsText += it.amount + " " + it.type;
-
-                    if (j < reward.Items.Count - 1)
-                        itemsText += ", ";
+                    var icon = getIcon(reward.Items[itemIndex].type);
+                    slot.SetItemIcon(icon);
+                    slot.SetAmount(reward.Items[itemIndex].amount);
                 }
-
-                slot.SetItemsText(itemsText);
             }
             else
             {
-                slot.SetItemsText("No reward");
+                slot.SetItemIcon(null);
             }
 
             DailyRewardSlotState state;
