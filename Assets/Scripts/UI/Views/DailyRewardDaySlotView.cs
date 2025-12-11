@@ -14,7 +14,7 @@ public class DailyRewardDaySlotView : MonoBehaviour
     [SerializeField] TextMeshProUGUI dayLabel;
     [SerializeField] TextMeshProUGUI amount;
     [SerializeField] Image itemsIcon;
-    [SerializeField] GameObject claimedTick; // optional
+    [SerializeField] GameObject claimedTick;
 
     public void SetDay(int day)
     {
@@ -38,5 +38,7 @@ public class DailyRewardDaySlotView : MonoBehaviour
     {
         if (claimedTick != null)
             claimedTick.SetActive(state == DailyRewardSlotState.Claimed);
+        if (amount != null)
+            amount.gameObject.SetActive(state != DailyRewardSlotState.Claimed);
     }
 }
