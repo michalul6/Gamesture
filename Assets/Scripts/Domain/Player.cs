@@ -7,6 +7,7 @@ using UnityEngine;
 public class Player
 {
     public int lastClaimedDay = 0;
+    public string lastClaimedDateUtc; // ISO string of last claim date (UTC)
     public PlayerWallet wallet = new PlayerWallet();
 
     public string ToJson() => JsonConvert.SerializeObject(this, Formatting.Indented);

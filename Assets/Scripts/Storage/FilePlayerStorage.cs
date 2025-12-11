@@ -6,16 +6,14 @@ public class FilePlayerStorage : IPlayerStorage
 {
     readonly string path;
 
-    public FilePlayerStorage(string filename = "player.dat")
+    public FilePlayerStorage(string filename = "player.json")
     {
         path = Path.Combine(Application.persistentDataPath, filename);
     }
 
     public void Save(Player player)
     {
-        File.WriteAllBytes(path, player.ToBytes());
-        //also write as json for easy debugging
-        File.WriteAllText(Path.ChangeExtension(path, ".json"), player.ToJson());
+        File.WriteAllText(path, player.ToJson());
     }
 
     public Player Load()

@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,10 @@ public class DailyRewardPopupView : BasePopupView
 
     [Header("Slots")]
     [SerializeField] private DailyRewardDaySlotView[] daySlots; // size 7 in inspector
+
+    [Header("Dates")]
+    [SerializeField] private TextMeshProUGUI lastClaimedDate;
+    [SerializeField] private TextMeshProUGUI todayDate;
 
     public event Action ClaimClicked;
     public event Action CloseClicked;
@@ -72,5 +77,14 @@ public class DailyRewardPopupView : BasePopupView
 
             slot.SetState(state);
         }
+    }
+
+    public void SetDates(DateTime? lastClaimed, DateTime today)
+    {
+        if (lastClaimedDate != null)
+            lastClaimedDate.text = lastClaimed.HasValue ? $"Last claimed: {lastClaimed.Value:yyyy-MM-dd}" : "Last claimed: never";
+
+        if (todayDate != null)
+            todayDate.text = $"Today: {today:yyyy-MM-dd}";
     }
 }
