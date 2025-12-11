@@ -16,4 +16,10 @@ public class PlayerWallet
         }
         entry.amount += amount;
     }
+
+    public int GetAmount(ItemType type)
+    {
+        var entry = items.Find(i => i.type == type);
+        return entry?.amount ?? 0;
+    }
 }

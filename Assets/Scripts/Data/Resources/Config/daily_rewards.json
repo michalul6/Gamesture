@@ -1,0 +1,11 @@
+{
+  "rewards": [
+    { "day": 1, "items": [ { "type": "Coins", "amount": 50 } ] },
+    { "day": 2, "items": [ { "type": "Gems", "amount": 150 } ] },
+    { "day": 3, "items": [ { "type": "Crystals", "amount": 2 } ] },
+    { "day": 4, "items": [ { "type": "Chest", "amount": 250 } ] },
+    { "day": 5, "items": [ { "type": "Defence", "amount": 2 } ] },
+    { "day": 6, "items": [ { "type": "Potion", "amount": 1 } ] },
+    { "day": 7, "items": [ { "type": "Cash", "amount": 10 } ] }
+  ]
+}
