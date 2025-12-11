@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class ScreenManager
 {
-    private readonly ScreenFactorySO _factory;
-    private readonly ScreenPresenterFactory _presenterFactory;
-    private readonly Transform _root;
-    private readonly GameContext _context;
+    readonly ScreenFactorySO _factory;
+    readonly ScreenPresenterFactory _presenterFactory;
+    readonly Transform _root;
+    readonly GameContext _context;
 
-    private BaseScreenView _current;
+    BaseScreenView _current;
 
     public ScreenManager(
         ScreenFactorySO factory,

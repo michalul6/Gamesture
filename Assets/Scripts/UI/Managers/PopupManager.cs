@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class PopupManager
 {
-    private readonly PopupFactorySO _factory;
-    private readonly PopupPresenterFactory _presenterFactory;
-    private readonly Transform _root;
-    private readonly GameContext _context;
+    readonly PopupFactorySO _factory;
+    readonly PopupPresenterFactory _presenterFactory;
+    readonly Transform _root;
+    readonly GameContext _context;
 
     public PopupManager(
         PopupFactorySO factory,

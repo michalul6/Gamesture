@@ -2,18 +2,18 @@ using System;
 
 public class DailyRewardPopupPresenter : IPresenter
 {
-    private readonly DailyRewardPopupView _view;
-    private readonly DailyRewardService _service;
-    private readonly Player _player;
-    private readonly ItemIconProvider _itemIcons;
+    readonly DailyRewardPopupView _view;
+    readonly DailyRewardService _service;
+    readonly Player _player;
+    readonly ItemIconProvider _itemIcons;
 
-    private int _currentDayToShow;
+    int _currentDayToShow;
 
     public DailyRewardPopupPresenter(GameContext context, DailyRewardPopupView view)
     {
         _view = view;
         _service = context.Resolve<DailyRewardService>();
-        _player  = context.Resolve<Player>();
+        _player = context.Resolve<Player>();
         _itemIcons = context.Resolve<ItemIconProvider>();
 
         _view.ClaimClicked += OnClaim;
@@ -32,7 +32,7 @@ public class DailyRewardPopupPresenter : IPresenter
     {
     }
 
-    private void Refresh()
+    void Refresh()
     {
         var lastClaimedDate = _service.GetLastClaimedDate();
         var today = _service.GetTodayDate();
@@ -46,7 +46,7 @@ public class DailyRewardPopupPresenter : IPresenter
         _view.SetDates(lastClaimedDate, today);
     }
 
-    private void OnClaim()
+    void OnClaim()
     {
         if (_service.TryClaimToday())
         {
@@ -55,12 +55,12 @@ public class DailyRewardPopupPresenter : IPresenter
         }
     }
 
-    private void OnClose()
+    void OnClose()
     {
         _view.Hide();
     }
 
-    private void OnSimulateNextDay()
+    void OnSimulateNextDay()
     {
         _service.AdvanceOneDayForSimulation();
         _currentDayToShow = _service.GetCurrentDayToShow();

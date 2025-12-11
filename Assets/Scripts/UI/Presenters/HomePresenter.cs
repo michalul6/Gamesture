@@ -1,7 +1,7 @@
 public class HomePresenter : IPresenter
 {
-    private readonly HomeScreenView _view;
-    private readonly PopupManager _popupManager;
+    readonly HomeScreenView _view;
+    readonly PopupManager _popupManager;
 
     public HomePresenter(GameContext context, HomeScreenView view)
     {
@@ -21,12 +21,12 @@ public class HomePresenter : IPresenter
     {
     }
 
-    private void OnOpenDailyRewardClicked()
+    void OnOpenDailyRewardClicked()
     {
         _popupManager.Show(PopupId.DailyReward);
     }
 
-    private void OnCloseClicked()
+    void OnCloseClicked()
     {
         _view.Hide();
     }

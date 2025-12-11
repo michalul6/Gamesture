@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ItemIconProvider
 {
-    private readonly ItemIconDatabaseSO _database;
+    readonly ItemIconDatabaseSO _database;
 
     public ItemIconProvider(ItemIconDatabaseSO database)
     {

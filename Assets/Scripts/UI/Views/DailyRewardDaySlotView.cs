@@ -11,10 +11,10 @@ public enum DailyRewardSlotState
 
 public class DailyRewardDaySlotView : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI dayLabel;
-    [SerializeField] private TextMeshProUGUI amount;
-    [SerializeField] private Image itemsIcon;
-    [SerializeField] private GameObject claimedTick; // optional
+    [SerializeField] TextMeshProUGUI dayLabel;
+    [SerializeField] TextMeshProUGUI amount;
+    [SerializeField] Image itemsIcon;
+    [SerializeField] GameObject claimedTick; // optional
 
     public void SetDay(int day)
     {

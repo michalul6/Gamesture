@@ -13,7 +13,7 @@ public class GameRoot : MonoBehaviour
     public Transform screenRoot;
     public Transform popupRoot;
 
-    private GameContext _context;
+    GameContext _context;
 
     void Awake()
     {

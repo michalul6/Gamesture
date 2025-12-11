@@ -6,22 +6,22 @@ using UnityEngine.UI;
 public class DailyRewardPopupView : BasePopupView
 {
     [Header("Buttons")]
-    [SerializeField] private Button claimButton;
-    [SerializeField] private Button closeButton;
-    [SerializeField] private Button simulateNextDayButton;
+    [SerializeField] Button claimButton;
+    [SerializeField] Button closeButton;
+    [SerializeField] Button simulateNextDayButton;
 
     [Header("Slots")]
-    [SerializeField] private DailyRewardDaySlotView[] daySlots; // size 7 in inspector
+    [SerializeField] DailyRewardDaySlotView[] daySlots; // size 7 in inspector
 
     [Header("Dates")]
-    [SerializeField] private TextMeshProUGUI lastClaimedDate;
-    [SerializeField] private TextMeshProUGUI todayDate;
+    [SerializeField] TextMeshProUGUI lastClaimedDate;
+    [SerializeField] TextMeshProUGUI todayDate;
 
     public event Action ClaimClicked;
     public event Action CloseClicked;
     public event Action SimulateNextDayClicked;
 
-    private void Awake()
+    void Awake()
     {
         if (claimButton != null)
             claimButton.onClick.AddListener(() => ClaimClicked?.Invoke());

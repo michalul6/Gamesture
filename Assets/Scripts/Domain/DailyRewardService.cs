@@ -41,7 +41,7 @@ public class DailyRewardService
         return true;
     }
 
-    private void Claim(int day)
+    void Claim(int day)
     {
         var reward = GetReward(day);
         if (reward == null) return;
@@ -54,7 +54,7 @@ public class DailyRewardService
         _storage.Save(_player);
     }
 
-    private bool HasClaimedToday()
+    bool HasClaimedToday()
     {
         if (string.IsNullOrEmpty(_player.lastClaimedDateUtc))
             return false;
@@ -86,7 +86,7 @@ public class DailyRewardService
         return lastClaimed.Date;
     }
 
-    private DateTime GetToday()
+    DateTime GetToday()
     {
         return (_simulatedDateUtc ?? DateTime.UtcNow).Date;
     }

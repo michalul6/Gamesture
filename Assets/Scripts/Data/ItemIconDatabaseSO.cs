@@ -12,9 +12,9 @@ public class ItemIconDatabaseSO : ScriptableObject
         public Sprite sprite;
     }
 
-    [SerializeField] private List<Entry> entries = new List<Entry>();
+    [SerializeField] List<Entry> entries = new List<Entry>();
 
-    private Dictionary<ItemType, Sprite> _lookup;
+    Dictionary<ItemType, Sprite> _lookup;
 
     public Sprite GetIcon(ItemType type)
     {
@@ -22,7 +22,7 @@ public class ItemIconDatabaseSO : ScriptableObject
         return _lookup.TryGetValue(type, out var sprite) ? sprite : null;
     }
 
-    private void EnsureLookup()
+    void EnsureLookup()
     {
         if (_lookup != null)
             return;
@@ -37,7 +37,7 @@ public class ItemIconDatabaseSO : ScriptableObject
         }
     }
 
-    private void OnValidate()
+    void OnValidate()
     {
         _lookup = null;
     }
