@@ -1,4 +1,5 @@
 Small Unity project showcasing a Daily Reward popup: JSON-driven data, one claim per day, day simulation, and atlas-based icons mapped to an enum.
+Built with Unity 6.3 LTS.
 
 ## How it works
 - `Claim` grants the reward for the current (UTC/simulated) day, blocks repeat claims that day, and saves progress.
