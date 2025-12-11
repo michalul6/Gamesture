@@ -12,3 +12,5 @@ Small Unity project showcasing a Daily Reward popup: JSON-driven data, one claim
 Reward data lives in `Assets/Scripts/Data/Resources/Config/daily_rewards.json`; the `type` fields match the `ItemType` enum and the sprite names in the atlas, resolved via `ItemIconDatabaseSO` + `ItemIconProvider`.
 
 Architecture: `GameRoot` builds a simple composition root with screen/popup managers and a shared context; presenters drive views while services handle rules and persistence. It’s structured to stay maintainable and easy to grow as more screens/popups are added.
+
+Player data (last claimed day/date and wallet) is loaded on game start and saved locally as `player.json`.
