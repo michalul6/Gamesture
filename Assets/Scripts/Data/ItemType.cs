@@ -1,12 +1,12 @@
 public enum ItemType
 {
-    Coins,
-    Gems,
-    Chest,
-    Crystals,
-    Potion,
     Cash,
+    Chest,
+    Coins,
+    Crystals,
     Defence,
+    Gems,
     Keys,
+    Potion,
     Scroll
 }
