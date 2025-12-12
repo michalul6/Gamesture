@@ -19,6 +19,8 @@ public class HomePresenter : IPresenter
 
     public void OnHide()
     {
+        _view.OpenDailyRewardClicked -= OnOpenDailyRewardClicked;
+        _view.CloseClicked -= OnCloseClicked;
     }
 
     void OnOpenDailyRewardClicked()

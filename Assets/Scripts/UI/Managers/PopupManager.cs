@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PopupManager
@@ -6,6 +7,7 @@ public class PopupManager
     readonly PopupPresenterFactory _presenterFactory;
     readonly Transform _root;
     readonly GameContext _context;
+    readonly Dictionary<PopupId, BasePopupView> _spawned = new();
 
     public PopupManager(
         PopupFactorySO factory,
@@ -21,10 +23,17 @@ public class PopupManager
 
     public void Show(PopupId id)
     {
-        var view = _factory.Create(id, _root) as BasePopupView;
+        if (!_spawned.TryGetValue(id, out var view) || view == null)
+        {
+            view = _factory.Create(id, _root);
+            _spawned[id] = view;
+        }
 
-        var presenter = _presenterFactory.Create(id, view, _context);
-        view.SetPresenter(presenter);
+        if (!view.HasPresenter)
+        {
+            var presenter = _presenterFactory.Create(id, view, _context);
+            view.SetPresenter(presenter);
+        }
 
         view.Show();
     }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ScreenManager
@@ -8,6 +9,7 @@ public class ScreenManager
     readonly GameContext _context;
 
     BaseScreenView _current;
+    readonly Dictionary<ScreenId, BaseScreenView> _spawned = new();
 
     public ScreenManager(
         ScreenFactorySO factory,
@@ -25,10 +27,17 @@ public class ScreenManager
     {
         _current?.Hide();
 
-        var view = _factory.Create(id, _root);
+        if (!_spawned.TryGetValue(id, out var view) || view == null)
+        {
+            view = _factory.Create(id, _root);
+            _spawned[id] = view;
+        }
 
-        var presenter = _presenterFactory.Create(id, view, _context);
-        view.SetPresenter(presenter);
+        if (!view.HasPresenter)
+        {
+            var presenter = _presenterFactory.Create(id, view, _context);
+            view.SetPresenter(presenter);
+        }
 
         view.Show();
 

@@ -30,6 +30,9 @@ public class DailyRewardPopupPresenter : IPresenter
 
     public void OnHide()
     {
+        _view.ClaimClicked -= OnClaim;
+        _view.CloseClicked -= OnClose;
+        _view.SimulateNextDayClicked -= OnSimulateNextDay;
     }
 
     void Refresh()
